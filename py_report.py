@@ -64,7 +64,7 @@ def get_error_day():
             GROUP BY day
         ) AS total
         ON total.day = errors.day
-        WHERE (ROUND((errors.error_req*1.0) / total.requests))
+        WHERE (ROUND(((errors.error_req*1.0) / total.requests), 3) > 0.01)
         ORDER BY per DESC;
     """
     data = query_db(query)
