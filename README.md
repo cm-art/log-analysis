@@ -19,8 +19,8 @@ The setup I used runs a Vagrant with a VirtualBox VM solution which take a few s
 5. Create your virtual environment
   * Start your VM by running `vagrant up`
   * SSH into your VM by running `vagrant ssh`
-  * Change Directory into /vagrant and use Git to clone in this reporting tool. 
-  * `git clone https://github.com/cm-art/log-analysis.git`
+  * Change Directory into /vagrant and use Git to clone in this reporting tool with `git clone https://github.com/cm-art/log-analysis.git`
+  * Install Prettyprint `sudo python3 -m pip install prettytable`
 6. Unzip the data to get the newsdata.sql file and copy it into the /vagrant directory 
 7. Load the data into the Database by running `psql -d news -f newsdata.sql`
 8. Change directory to /vagrant/log-analysis and then Run the Report `python3 py_report.py
