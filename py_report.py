@@ -84,7 +84,7 @@ class DBQuery:
 
 if __name__ == '__main__':
     print("Collecting Reports...")
-    db = DBQuery()
-    db.get_top3()
-    db.get_top_author()
-    db.get_error_day()
+    with DBQuery() as db:
+        db.get_top3()
+        db.get_top_author()
+        db.get_error_day()
