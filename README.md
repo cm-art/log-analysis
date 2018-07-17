@@ -3,7 +3,30 @@
 
 This project answers three questions by querying the "news" database. 
 
-Sample Output 
+Running on psycopg2 and PrettyTable to display output. 
+All SQL commands needed to be created as one command, no additional Views were created for this application. 
+
+## Creating the Environment to run this program. 
+---
+This project requires a linux environment running python3 with a few additions. 
+The setup I used runs a Vagrant with a VirtualBox VM solution which take a few steps to setup. 
+
+### Setting up Virtual Environment for News DB
+1. [Install Vagrant](https://www.vagrantup.com/downloads.html)
+2. [Install VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+3. [Download and copy the VM from Udacity](https://github.com/udacity/fullstack-nanodegree-vm)
+4. [Download the News Database here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+5. Create your virtual environment
+  * Start your VM by running `vagrant up`
+  * SSH into your VM by running `vagrant ssh`
+  * Change Directory into /vagrant and use Git to clone in this reporting tool. 
+  * `git clone https://github.com/cm-art/log-analysis.git`
+6. Unzip the data to get the newsdata.sql file and copy it into the /vagrant directory 
+7. Load the data into the Database by running `psql -d news -f newsdata.sql`
+8. Change directory to /vagrant/log-analysis and then Run the Report `python3 py_report.py
+
+---
+Expected Output (_this can also be found in sample_output.txt_)
 ```
 Report 1: What are the most popular three articles of all time?
 +----------------------------------+------------+
@@ -30,9 +53,6 @@ Report 3: On which days >1% of requests lead to errors?
 | July 17, 2016 |   2.3%   |
 +---------------+----------+
  ```
-
-Running on psycopg2 and PrettyTable to display output. 
-All SQL commands needed to be created as one command, no additional Views were created for this application. 
 
 ---
 
